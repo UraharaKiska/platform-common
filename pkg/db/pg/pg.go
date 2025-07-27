@@ -5,7 +5,7 @@ import (
 	// "fmt"
 	// "log"
 
-	"github.com/UraharaKiska/go-auth/internal/client/db"
+	"github.com/UraharaKiska/platform-common/pkg/db"
 	"github.com/georgysavva/scany/pgxscan"
 	"github.com/jackc/pgconn"
 	"github.com/jackc/pgx/v4"

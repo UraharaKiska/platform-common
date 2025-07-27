@@ -3,8 +3,8 @@ package transaction
 import (
 	"context"
 
-	"github.com/UraharaKiska/go-auth/internal/client/db"
-	"github.com/UraharaKiska/go-auth/internal/client/db/pg"
+	"github.com/UraharaKiska/platform-common/pkg/db"
+	"github.com/UraharaKiska/platform-common/pkg/db/pg"
 	"github.com/jackc/pgx/v4"
 	"github.com/pkg/errors"
 )

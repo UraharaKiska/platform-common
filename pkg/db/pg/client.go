@@ -4,7 +4,7 @@ import (
 	"context"
 	"github.com/pkg/errors"
 
-	"github.com/UraharaKiska/go-auth/internal/client/db"
+	"github.com/UraharaKiska/platform-common/pkg/db"
 	"github.com/jackc/pgx/v4/pgxpool"
 )
 
