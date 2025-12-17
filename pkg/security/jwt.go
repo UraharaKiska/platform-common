@@ -7,9 +7,9 @@ import (
 )
 
 type JWTConfig struct {
-	Secret string
-	AccessTTl time.Duration
-	Issuer string
+	Secret string `toml:"secret,omitempty"`
+	AccessTTl time.Duration `toml:"access_ttl,omitempty"`
+	Issuer string `toml:"issuer,omitempty"`
 }
 
 type Claims struct {
@@ -32,7 +32,7 @@ func GenerateAccessToken(cfg JWTConfig, userId int64, login string) (string, err
 		},
 	}
 
-	token := jwt.NewWithClaims(jwt.SigningMethodES256, claims)
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
 
 	return token.SignedString([]byte(cfg.Secret))
 }
