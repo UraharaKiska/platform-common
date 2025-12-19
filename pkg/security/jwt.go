@@ -15,16 +15,18 @@ type JWTConfig struct {
 type Claims struct {
 	UserID int64  `json:"user_id"`
 	Login  string `json:"login"`
+	Roles []string `json:"roles"`
 
 	jwt.RegisteredClaims
 }
 
-func GenerateAccessToken(cfg JWTConfig, userId int64, login string) (string, error) {
+func GenerateAccessToken(cfg JWTConfig, userId int64, login string, roles []string) (string, error) {
 	now := time.Now()
 	
 	claims := Claims{
 		UserID: userId,
 		Login: login,
+		Roles: roles,
 		RegisteredClaims: jwt.RegisteredClaims{
 			Issuer: cfg.Issuer,
 			IssuedAt: jwt.NewNumericDate(now),
